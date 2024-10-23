@@ -1,47 +1,142 @@
-.form-floating > .form-control,
-.form-floating > .form-control-plaintext {
-  padding: 1rem 0.75rem;
+.login-container {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.login-card {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  border-radius: 4px !important;
+  border: none !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 450px;
+  padding: 60px 68px 40px;
+}
+
+.app-title {
+  color: #E50914;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+/* Reset form floating styles */
+.form-floating {
+  position: relative;
+  margin-bottom: 16px;
 }
 
 .form-floating > .form-control,
-.form-floating > .form-control-plaintext,
-.form-floating > .form-select {
-  height: calc(3.5rem + 2px);
-  line-height: 1.25;
+.form-floating > .form-control-plaintext {
+  background-color: #333 !important;
+  border: none !important;
+  border-radius: 4px !important;
+  height: 50px !important;
+  color: white !important;
+  padding: 16px 20px !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+.form-floating > .form-control:focus,
+.form-floating > .form-control:not(:placeholder-shown) {
+  background-color: #454545 !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .form-floating > label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  padding: 1rem 0.75rem;
-  pointer-events: none;
-  border: 1px solid transparent;
-  transform-origin: 0 0;
-  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+  padding: 16px 20px !important;
+  color: #8c8c8c !important;
+  font-size: 16px !important;
+  transform: translateY(0) !important;
+  transition: transform .15s ease-in-out, scale .15s ease-in-out !important;
 }
 
 .form-floating > .form-control:focus ~ label,
-.form-floating > .form-control:not(:placeholder-shown) ~ label,
-.form-floating > .form-select ~ label {
-  opacity: 0.65;
-  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  transform: scale(0.85) translateY(-25px) !important;
+  color: #8c8c8c !important;
 }
 
-.form-floating > .form-control:-webkit-autofill ~ label {
-  opacity: 0.65;
-  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
-}
-
+/* Password toggle button */
 .password-toggle {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
+  position: absolute !important;
+  right: 12px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 2 !important;
+  background: none !important;
+  border: none !important;
+  color: #8c8c8c !important;
+  padding: 0 !important;
 }
 
-.form-floating {
-  position: relative;
+.password-toggle:hover,
+.password-toggle:focus {
+  color: white !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Sign In button */
+.login-btn {
+  background-color: #E50914 !important;
+  border: none !important;
+  border-radius: 4px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  margin: 24px 0 12px !important;
+  padding: 16px !important;
+  width: 100% !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.login-btn:hover,
+.login-btn:focus {
+  background-color: #f40612 !important;
+}
+
+/* Sign Up link */
+.signup-link {
+  color: #737373 !important;
+  font-size: 16px !important;
+  margin-top: 16px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease !important;
+}
+
+.signup-link:hover {
+  color: white !important;
+}
+
+/* Alert modifications */
+.alert {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+  border: none !important;
+  color: white !important;
+  margin-top: 16px !important;
+}
+
+.alert-danger {
+  background-color: rgba(229, 9, 20, 0.75) !important;
+}
+
+.alert-success {
+  background-color: rgba(39, 174, 96, 0.75) !important;
+}
+
+/* Autofill styles override */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #333 inset !important;
+  -webkit-text-fill-color: white !important;
 }

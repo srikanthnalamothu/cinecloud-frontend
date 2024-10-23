@@ -1,0 +1,86 @@
+.movies-container {
+  padding: 20px 0;
+}
+
+.movies-heading {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.search-input,
+.filter-select {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  color: white !important;
+  height: 40px !important;
+}
+
+.search-input::placeholder {
+  color: #808080 !important;
+  opacity: 1;
+}
+
+/* Firefox */
+.search-input::-moz-placeholder {
+  color: #808080 !important;
+  opacity: 1;
+}
+
+/* Internet Explorer */
+.search-input:-ms-input-placeholder {
+  color: #808080 !important;
+  opacity: 1;
+}
+
+/* Microsoft Edge */
+.search-input::-ms-input-placeholder {
+  color: #808080 !important;
+  opacity: 1;
+}
+
+/* Webkit (Chrome, Safari, newer versions of Opera) */
+.search-input::-webkit-input-placeholder {
+  color: #808080 !important;
+  opacity: 1;
+}
+
+.search-input:focus::placeholder {
+  opacity: 0.7;
+}
+
+.search-input:focus,
+.filter-select:focus {
+  background-color: #454545 !important;
+  border-color: #E50914 !important;
+  box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.25) !important;
+  outline: none;
+}
+
+.filter-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+.filter-select option {
+  background-color: #333333;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .movies-heading {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .search-input,
+  .filter-select {
+    margin-bottom: 1rem;
+  }
+}

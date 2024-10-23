@@ -1,0 +1,22 @@
+.movies-container {
+  background-color: #141414;
+  min-height: calc(100vh - 76px);
+  padding: 20px 0;
+  color: white;
+}
+
+.loading-spinner {
+  color: #E50914;
+  text-align: center;
+  padding: 3rem;
+}
+
+.error-message {
+  background-color: rgba(229, 9, 20, 0.1);
+  color: #E50914;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 2rem auto;
+  max-width: 600px;
+  text-align: center;
+}
