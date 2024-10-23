@@ -1,10 +1,11 @@
 import './App.css';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import Home from './views/home/Home';
-import Login from './views/login/Login';
-import Movies from './views/movies/Movies';
-import Signup from './views/signup/Signup';
+import Home from './views/home/';
+import Login from './views/login/';
+import Movies from './views/movies/';
+import Signup from './views/signup/';
+import Header from './components/header';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -18,15 +19,18 @@ const ScrollToTop = () => {
 
 function App() {
   return (
-    <div className='App'>
+    <div className="app">
       <ScrollToTop />
-      <Routes>
-      <Route path="/" index element={<Home />} />
-      <Route path="home" index element={<Home />} />
-      <Route path="login" element={<Login />} />
-      <Route path="signup" element={<Signup />} />
-      <Route path="movies" element={<Movies />} />
-      </Routes>
+      <Header />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/movies" element={<Movies />} />
+        </Routes>
+      </main>
     </div>
   );
 }
