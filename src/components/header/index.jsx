@@ -23,6 +23,7 @@ const Header = () => {
       setLoading(true);
       await UserService.logoutUser();
       localStorage.removeItem('user');
+      localStorage.removeItem('cart');
       setUser(null);
       navigate('/login');
     } catch (error) {
@@ -53,6 +54,7 @@ const Header = () => {
             alt="CineCloud"
             width="50"
             height="50"
+            style={{ borderRadius: '50%'}}
             className="d-inline-block align-top me-2"
           />
           <span className="brand-title">{title}</span>
@@ -67,9 +69,9 @@ const Header = () => {
             <Nav.Link as={Link} to="/favorites" className="nav-link">
               Favorites
             </Nav.Link>
-            <Nav.Link as={Link} to="/cart" className="nav-link">
+            { user && <Nav.Link as={Link} to="/cart" className="nav-link">
               My Cart
-            </Nav.Link>
+            </Nav.Link>}
             {user && (
               <Nav.Link as={Link} to="/orders" className="nav-link">
                 Orders
