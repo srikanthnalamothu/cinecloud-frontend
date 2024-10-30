@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Navbar, Nav, Container, Button, Dropdown } from 'react-bootstrap';
-import UserService from '../../services/UserServices';
-import './Header.css';
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Navbar, Nav, Container, Button, Dropdown } from "react-bootstrap";
+import UserService from "../../services/UserServices";
+import "./Header.css";
 
 const Header = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const title = "CineCloud";
-  const logoUrl = "/movie.png";
+  const logoUrl = "/logo.jpeg";
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
+    const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
     }
@@ -22,17 +22,17 @@ const Header = () => {
     try {
       setLoading(true);
       await UserService.logoutUser();
-      localStorage.removeItem('user');
-      localStorage.removeItem('cart');
+      localStorage.removeItem("user");
+      localStorage.removeItem("cart");
       setUser(null);
-      navigate('/login');
+      navigate("/login");
     } catch (error) {
-      console.error('Logout failed:', error);
+      console.error("Logout failed:", error);
       // If the error is due to invalid token or session, still logout the user locally
       if (error.response?.status === 401 || error.response?.status === 403) {
-        localStorage.removeItem('user');
+        localStorage.removeItem("user");
         setUser(null);
-        navigate('/login');
+        navigate("/login");
       }
     } finally {
       setLoading(false);
@@ -41,12 +41,19 @@ const Header = () => {
 
   const UserAvatar = ({ user }) => (
     <div className="user-avatar">
-      {user.firstName.charAt(0)}{user.lastName.charAt(0)}
+      {user.firstName.charAt(0)}
+      {user.lastName.charAt(0)}
     </div>
   );
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" fixed="top" className="header-nav">
+    <Navbar
+      bg="dark"
+      variant="dark"
+      expand="lg"
+      fixed="top"
+      className="header-nav"
+    >
       <Container fluid>
         <Link to="/" className="navbar-brand d-flex align-items-center">
           <img
@@ -54,7 +61,7 @@ const Header = () => {
             alt="CineCloud"
             width="50"
             height="50"
-            style={{ borderRadius: '50%'}}
+            style={{ borderRadius: "50%" }}
             className="d-inline-block align-top me-2"
           />
           <span className="brand-title">{title}</span>
@@ -69,9 +76,11 @@ const Header = () => {
             <Nav.Link as={Link} to="/favorites" className="nav-link">
               Favorites
             </Nav.Link>
-            { user && <Nav.Link as={Link} to="/cart" className="nav-link">
-              My Cart
-            </Nav.Link>}
+            {user && (
+              <Nav.Link as={Link} to="/cart" className="nav-link">
+                My Cart
+              </Nav.Link>
+            )}
             {user && (
               <Nav.Link as={Link} to="/orders" className="nav-link">
                 Orders
@@ -91,8 +100,8 @@ const Header = () => {
               </Button>
             ) : (
               <Dropdown align="end">
-                <Dropdown.Toggle 
-                  variant="link" 
+                <Dropdown.Toggle
+                  variant="link"
                   id="user-dropdown"
                   className="user-dropdown-toggle"
                   disabled={loading}
@@ -113,7 +122,7 @@ const Header = () => {
                       className="w-100"
                       disabled={loading}
                     >
-                      {loading ? 'Logging out...' : 'Logout'}
+                      {loading ? "Logging out..." : "Logout"}
                     </Button>
                   </div>
                 </Dropdown.Menu>
