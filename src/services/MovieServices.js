@@ -57,6 +57,10 @@ class MovieService {
     }
     return apiClient.get('movies/recommendations');
   }
+
+  static getMoviesByBulk(movieIds) {
+    return apiClient.post('movies/bulk', { movieIds });
+  }
 }
 
 export default MovieService;
