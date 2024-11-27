@@ -1,4 +1,5 @@
 import apiClient from "./services";
+import axios from 'axios';
 
 class MovieService {
   // Basic CRUD operations
@@ -46,6 +47,19 @@ class MovieService {
   static searchMovie(key) {
     return apiClient.get(`movies?search=${key}`);
   }
+
+  static getMovieStream(movieId) {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return axios({
+      url: `${apiClient.defaults.baseURL}movies/${movieId}/play`,
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
+      responseType: 'blob', // Important for streaming video
+    });
+  }
+
 
   // Recommendations
   static getRecommendations() {

@@ -1,3 +1,4 @@
+// src/hooks/useUrlParams.js
 import { useState, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import debounce from 'lodash/debounce';

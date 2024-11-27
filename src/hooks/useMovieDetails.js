@@ -1,6 +1,7 @@
 // src/hooks/useMovieDetails.js
 import { useState, useEffect } from 'react';
 import MovieService from '../services/MovieServices';
+import OrderService from '../services/OrderServices';
 
 export const useMovieDetails = (movieId) => {
   const [movie, setMovie] = useState(null);
@@ -19,11 +20,11 @@ export const useMovieDetails = (movieId) => {
         // Fetch movie details and order status in parallel
         const [movieResponse, orderResponse] = await Promise.all([
           MovieService.getMovie(movieId),
-          Promise.resolve({ data: true })
+          user ? OrderService.checkMovieOrderStatus(user.id, movieId) : Promise.resolve({ data: false })
         ]);
 
         setMovie(movieResponse.data);
-        // setIsOrdered(orderResponse.data);
+        setIsOrdered(orderResponse.data);
         setError(null);
       } catch (err) {
         setError(err.response?.data?.message || 'Failed to load movie details');

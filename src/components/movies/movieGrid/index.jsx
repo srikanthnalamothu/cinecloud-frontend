@@ -21,15 +21,15 @@ const MovieGrid = ({ movies = [] }) => {
         {movies.map(movie => (
           <Col key={movie.id} xs={12} sm={6} md={4} lg={3}>
             <Card 
-              className="movie-card"
+              className="movie-card-in-movie-grid"
               onClick={() => navigate(`/movie/${movie.id}`)}
             >
-              <div className="movie-image-wrapper">
+              <div className="movie-image-wrapper-in-movie-grid">
                 <Card.Img 
                   variant="top" 
                   src={movie.imageUrl} 
                   alt={movie.title}
-                  className="movie-image"
+                  className="movie-image-in-movie-grid"
                   onError={(e) => {
                     e.target.src = '/movie-placeholder.jpg';
                   }}
@@ -37,12 +37,10 @@ const MovieGrid = ({ movies = [] }) => {
               </div>
               <Card.Body>
                 <div>
-                  <div className="movie-title-wrapper" data-full-title={movie.title}>
-                    <Card.Title className="movie-title">
+                    <div className="movie-title-in-movie-grid">
                       {movie.title}
-                    </Card.Title>
-                  </div>
-                  <Card.Text className="movie-cost">
+                    </div>
+                  <Card.Text className="movie-cost-in-movie-grid">
                     ${movie.cost.toFixed(2)}
                   </Card.Text>
                 </div>

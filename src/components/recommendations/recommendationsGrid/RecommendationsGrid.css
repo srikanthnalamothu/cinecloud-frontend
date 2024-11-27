@@ -1,0 +1,95 @@
+/* src/components/recommendations/RecommendationsGrid.css */
+.recommendation-card {
+    background-color: #181818;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+}
+
+.recommendation-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.recommendation-image-wrapper {
+    position: relative;
+    padding-top: 100%; /* Changed from 150% to 100% for square aspect ratio */
+    /* Or use this for 16:9 aspect ratio */
+    /* padding-top: 56.25%; */
+    overflow: hidden;
+    background-color: #141414;
+}
+
+/* Rest of your CSS remains the same */
+.recommendation-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+  
+  .recommendation-card:hover .recommendation-image {
+    transform: scale(1.1);
+  }
+  
+  .match-score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(229, 9, 20, 0.9);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .recommendation-title {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .recommendation-metadata {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .genre, .language {
+    color: #737373;
+  }
+  
+  .recommendation-price {
+    color: #46d369;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  /* Animation for loading */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .loading-shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(to right, #181818 4%, #222 25%, #181818 36%);
+    background-size: 1000px 100%;
+  }

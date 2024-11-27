@@ -1,3 +1,4 @@
+// src/hooks/useMovieData.js
 import { useState, useEffect } from 'react';
 import MovieService from '../services/MovieServices';
 import GenreService from '../services/GenreServices';
