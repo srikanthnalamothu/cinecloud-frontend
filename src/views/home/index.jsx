@@ -1,8 +1,8 @@
-import Movies from "../movies/";
+import Recommendations from "../recommendations";
 
 const Home = () => {
     return (
-        <Movies />
+        <Recommendations />
     )
 }
 

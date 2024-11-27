@@ -1,27 +1,38 @@
 /* src/components/shared/MovieList.css */
-.movie-card {
-    background-color: #181818;
-    border: none;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 400px;
+.movie-card-in-movielist {
+  background-color: #181818;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  height: 100%;
   }
+
+  .movie-card-in-movielist:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
   
-  .movie-image-wrapper {
-    height: 250px;
-    overflow: hidden;
+  .movie-image-wrapper-in-movielist {
     position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+    background-color: #141414;
   }
   
-  .movie-image {
+  .movie-image-in-movielist {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
   
-  .movie-title {
+  .movie-title-in-movielist {
     color: white;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
@@ -31,7 +42,7 @@
     overflow: hidden;
   }
   
-  .movie-cost {
+  .movie-cost-in-movielist {
     color: #46d369;
     font-weight: 600;
     font-size: 1.2rem;

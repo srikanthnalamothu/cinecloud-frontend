@@ -1,7 +1,9 @@
 // src/views/cart/Cart.jsx
 import React from 'react';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { useBulkMovies } from '../../hooks/useBulkMovies';
 import MovieList from '../../components/movies/movieList';
+import CartSummary from '../../components/cart/cartSummary';
 import LoadingSpinner from '../../components/shared/loadingSpinner';
 import ErrorMessage from '../../components/shared/errorMessage';
 import './Cart.css';
@@ -34,6 +36,15 @@ const Cart = () => {
             removeButtonText="Remove from Cart"
           />
         </div>
+        
+        {movies.length > 0 && (
+          <PayPalScriptProvider options={initialOptions}>
+            <CartSummary 
+              cartItems={cartItems}
+              movies={movies}
+            />
+          </PayPalScriptProvider>
+        )}
       </div>
     </div>
   );

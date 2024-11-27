@@ -29,14 +29,14 @@ const MovieList = ({
       <Row className="g-4">
         {movies.map(movie => (
           <Col key={movie.id} xs={12} sm={6} md={4} lg={3}>
-            <Card className="movie-card">
-              <div className="movie-image-wrapper">
+            <Card className="movie-card-in-movielist">
+              <div className="movie-image-wrapper-in-movielist">
                 <Card.Img 
                   style={{ cursor: 'pointer' }}
                   variant="top" 
                   src={movie.imageUrl} 
                   alt={movie.title}
-                  className="movie-image"
+                  className="movie-image-in-movielist"
                   onError={(e) => {
                     e.target.src = '/movie-placeholder.jpg';
                   }}
@@ -45,10 +45,8 @@ const MovieList = ({
               </div>
               <Card.Body className="d-flex flex-column justify-content-between">
                 <div>
-                  <div className="movie-title-wrapper" data-full-title={movie.title}>
-                    <Card.Title className="movie-title">{movie.title}</Card.Title>
-                  </div>
-                  <Card.Text className="movie-cost">${movie.cost.toFixed(2)}</Card.Text>
+                    <div className="movie-title-in-movielist">{movie.title}</div>
+                  <Card.Text className="movie-cost-in-movielist">${movie.cost.toFixed(2)}</Card.Text>
                 </div>
                 <div className="d-flex flex-column gap-2">
                   {/* Only show Remove button if it's cart/favorites view */}

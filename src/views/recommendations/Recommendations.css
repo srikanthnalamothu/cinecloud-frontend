@@ -1,0 +1,43 @@
+/* src/views/recommendations/Recommendations.css */
+.recommendations-container {
+    min-height: calc(100vh - 76px);
+    background-color: #141414;
+    padding: 20px 0;
+  }
+  
+  .recommendations-header {
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .page-title {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .recommendation-subtitle {
+    color: #737373;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .recommendations-container {
+      padding: 1rem 0;
+    }
+  
+    .recommendations-header {
+      padding: 0 1rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .page-title {
+      font-size: 1.5rem;
+    }
+  
+    .recommendation-subtitle {
+      font-size: 1rem;
+    }
+  }

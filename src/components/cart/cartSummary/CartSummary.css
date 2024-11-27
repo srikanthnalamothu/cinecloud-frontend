@@ -1,0 +1,202 @@
+/* src/components/cart/CartSummary.css */
+.cart-summary {
+    background-color: #141414 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    padding: 0;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+  }
+  
+  .cart-summary .card-body {
+    padding: 24px;
+  }
+  
+  .summary-title {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 16px;
+  }
+  
+  .summary-details {
+    margin-bottom: 24px;
+  }
+  
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    color: #999;
+    font-size: 16px;
+  }
+  
+  .summary-row:last-child {
+    margin-bottom: 0;
+  }
+  
+  .summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .summary-total span:first-child {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .summary-total span:last-child {
+    color: #46d369;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  /* PayPal button container */
+  .paypal-buttons {
+    margin-top: 20px;
+  }
+  
+  /* Custom scrollbar for the summary */
+  .cart-summary::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .cart-summary::-webkit-scrollbar-track {
+    background: #141414;
+  }
+  
+  .cart-summary::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .cart-summary {
+      max-width: 100%;
+      margin-top: 24px;
+    }
+  
+    .cart-summary .card-body {
+      padding: 16px;
+    }
+  
+    .summary-title {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+  }
+
+/* Login Prompt Styles */
+.login-prompt {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  .login-icon {
+    font-size: 3rem;
+    color: #E50914;
+    margin-bottom: 1.5rem;
+  }
+  
+  .login-message {
+    color: #999;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .login-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E50914;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #f40612;
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  .signup-prompt {
+    color: #737373;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  .signup-prompt a {
+    color: #E50914;
+    text-decoration: none;
+  }
+  
+  .signup-prompt a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Animation for login prompt */
+  .login-prompt {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Update existing card styles for consistency */
+  .cart-summary {
+    background-color: #141414 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+  }
+  
+  .cart-summary .card-body {
+    padding: 1.5rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .login-prompt {
+      padding: 1.5rem 1rem;
+    }
+  
+    .login-icon {
+      font-size: 2.5rem;
+    }
+  
+    .login-button {
+      padding: 0.5rem 1.5rem;
+    }
+  }

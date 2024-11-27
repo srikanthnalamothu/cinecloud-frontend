@@ -8,7 +8,9 @@ import Signup from './views/signup/';
 import Header from './components/header';
 import Favorites from './views/favorites';
 import Cart from './views/cart';
+import Orders from './views/orders';
 import Movie from './views/movie';
+import MoviePlayer from './views/moviePlayer';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -32,9 +34,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/movies" element={<Movies />} />
-          <Route path="/movie/:id" element={<Movie />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/movie/:id" element={<Movie />} />
+          <Route path="/movie/:id/play" element={<MoviePlayer />} />
         </Routes>
       </main>
     </div>

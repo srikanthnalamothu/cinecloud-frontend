@@ -1,3 +1,4 @@
+// src/hooks/useBulkMovies.js
 import { useState, useEffect, useCallback } from 'react';
 import MovieService from '../services/MovieServices';
 

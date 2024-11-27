@@ -1,5 +1,4 @@
-/* src/components/shared/MovieCardGrid/MovieCardGrid.css */
-.movie-card {
+.movie-card-in-movie-grid {
   background-color: #181818;
   border: none;
   border-radius: 8px;
@@ -9,20 +8,20 @@
   height: 100%;
 }
 
-.movie-card:hover {
+.movie-card-in-movie-grid:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
-.movie-image-wrapper {
+.movie-image-wrapper-in-movie-grid {
   position: relative;
-  padding-top: 150%;
+  padding-top: 100%;
   overflow: hidden;
   background-color: #141414;
 }
 
-.movie-image {
+.movie-image-in-movie-grid {
   position: absolute;
   top: 0;
   left: 0;
@@ -32,11 +31,11 @@
   transition: transform 0.3s ease;
 }
 
-.movie-card:hover .movie-image {
+.movie-card-in-movie-grid:hover .movie-image-in-movie-grid {
   transform: scale(1.1);
 }
 
-.match-score {
+.match-score-in-movie-grid {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -49,11 +48,11 @@
   z-index: 1;
 }
 
-.movie-title-wrapper {
+.movie-title-wrapper-in-movie-grid {
   position: relative;
 }
 
-.movie-title {
+.movie-title-in-movie-grid {
   color: white;
   font-size: 1.1rem;
   font-weight: 600;
@@ -64,7 +63,7 @@
   overflow: hidden;
 }
 
-.movie-metadata {
+.movie-metadata-in-movie-grid {
   display: flex;
   gap: 1rem;
   margin-bottom: 0.5rem;
@@ -75,7 +74,7 @@
   color: #737373;
 }
 
-.movie-cost {
+.movie-cost-in-movie-grid {
   color: #46d369;
   font-weight: 600;
   font-size: 1.2rem;

@@ -1,0 +1,31 @@
+/* src/views/orders/Orders.css */
+.orders-container {
+    min-height: calc(100vh - 76px);
+    background-color: #141414;
+    padding: 2rem;
+  }
+  
+  .orders-header {
+    margin-bottom: 2rem;
+  }
+  
+  .page-title {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .orders-container {
+      padding: 1rem;
+    }
+  
+    .orders-header {
+      margin-bottom: 1.5rem;
+    }
+  
+    .page-title {
+      font-size: 1.5rem;
+    }
+  }

@@ -1,0 +1,76 @@
+/* src/views/moviePlayer/MoviePlayer.css */
+.player-container {
+    min-height: calc(100vh - 76px);
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .video-player {
+    width: 100%;
+    max-height: calc(100vh - 76px);
+    background: #000;
+  }
+  
+  .access-denied {
+    background-color: #141414;
+  }
+  
+  .access-denied-content {
+    text-align: center;
+    color: white;
+    padding: 3rem;
+    max-width: 500px;
+  }
+  
+  .lock-icon {
+    font-size: 4rem;
+    color: #E50914;
+    margin-bottom: 1.5rem;
+  }
+  
+  .access-denied-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .access-denied-content p {
+    color: #999;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .purchase-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  .purchase-button:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Controls customization */
+  .video-player::-webkit-media-controls {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .video-player::-webkit-media-controls-panel {
+    padding: 0 12px;
+  }
+  
+  .video-player::-webkit-media-controls-play-button {
+    color: white;
+  }
+  
+  /* Error state */
+  .error-message {
+    color: white;
+    text-align: center;
+    padding: 2rem;
+  }
