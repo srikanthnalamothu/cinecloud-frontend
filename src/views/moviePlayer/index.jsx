@@ -12,7 +12,7 @@ const MoviePlayer = () => {
   const { id } = useParams();
   const { isOrdered, loading, error } = useMoviePlayer(id);
 
-  const videoUrl = `http://localhost:3200/movies/${id}/play`;
+  const videoUrl = `http://ec2-18-118-140-9.us-east-2.compute.amazonaws.com/:3200/movies/${id}/play`;
 
   if (loading) return <LoadingSpinner />;
 
